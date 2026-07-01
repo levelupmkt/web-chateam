@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="es-EC">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SEO básico (docs/06-SEO.md) -->
+  <title>Chateam — CRM de WhatsApp para negocios en Ecuador</title>
+  <meta name="description" content="Gestiona tus ventas, automatiza mensajes y atiende a tus clientes desde un solo lugar. Prueba Chateam gratis por 14 días." />
+  <link rel="canonical" href="https://chateam.ws/" />
+  <meta name="theme-color" content="#005166" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_EC" />
+  <meta property="og:site_name" content="Chateam" />
+  <meta property="og:title" content="Chateam — CRM de WhatsApp para negocios en Ecuador" />
+  <meta property="og:description" content="Centraliza tus chats, automatiza tu seguimiento y vende más por WhatsApp. Prueba gratis 14 días." />
+  <meta property="og:url" content="https://chateam.ws/" />
+  <meta property="og:image" content="https://chateam.ws/public/images/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Chateam — CRM de WhatsApp para negocios en Ecuador" />
+  <meta name="twitter:description" content="Centraliza tus chats, automatiza tu seguimiento y vende más por WhatsApp. Prueba gratis 14 días." />
+  <meta name="twitter:image" content="https://chateam.ws/public/images/og-image.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="public/favicon/favicon.svg" />
+  <link rel="apple-touch-icon" href="public/favicon/favicon.svg" />
+
+  <!-- Precarga de la fuente display principal -->
+  <link rel="preload" href="public/fonts/Cocogoose-Pro-Darkmode-trial.woff2" as="font" type="font/woff2" crossorigin />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="src/styles/tokens.css" />
+  <link rel="stylesheet" href="src/styles/typography.css" />
+  <link rel="stylesheet" href="src/styles/globals.css" />
+  <link rel="stylesheet" href="src/styles/components.css" />
+
+  <!-- Datos estructurados (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://chateam.ws/#organization",
+        "name": "Chateam",
+        "url": "https://chateam.ws/",
+        "logo": "https://chateam.ws/public/images/logo-chateam.png",
+        "description": "CRM de WhatsApp para PYMES, negocios digitales y profesionales en Ecuador.",
+        "areaServed": "EC"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://chateam.ws/#website",
+        "url": "https://chateam.ws/",
+        "name": "Chateam",
+        "inLanguage": "es-EC",
+        "publisher": { "@id": "https://chateam.ws/#organization" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Chateam",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "inLanguage": "es-EC",
+        "url": "https://chateam.ws/",
+        "description": "CRM integrado con WhatsApp: pipeline de ventas, automatización, mensajería multicanal e informes.",
+        "offers": [
+          { "@type": "Offer", "name": "Starter", "price": "9.99", "priceCurrency": "USD" },
+          { "@type": "Offer", "name": "Business", "price": "19.99", "priceCurrency": "USD" },
+          { "@type": "Offer", "name": "Business Plus", "price": "29.99", "priceCurrency": "USD" },
+          { "@type": "Offer", "name": "Corporate", "price": "59.99", "priceCurrency": "USD" },
+          { "@type": "Offer", "name": "Pro-Corporate", "price": "79.99", "priceCurrency": "USD" },
+          { "@type": "Offer", "name": "Elite Corporate", "price": "99.99", "priceCurrency": "USD" }
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "CRM de WhatsApp",
+        "provider": { "@id": "https://chateam.ws/#organization" },
+        "areaServed": { "@type": "Country", "name": "Ecuador" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "¿Qué es Chateam?", "acceptedAnswer": { "@type": "Answer", "text": "Un CRM integrado con WhatsApp para centralizar tu comunicación y automatizar tus ventas." } },
+          { "@type": "Question", "name": "¿Necesito saber programar?", "acceptedAnswer": { "@type": "Answer", "text": "No. Puedes configurar flujos, funnel y respuestas automáticas sin escribir código." } },
+          { "@type": "Question", "name": "¿Con qué canales funciona?", "acceptedAnswer": { "@type": "Answer", "text": "WhatsApp y otros canales de mensajería como Instagram, Messenger y Telegram, desde un mismo panel." } },
+          { "@type": "Question", "name": "¿Hay prueba gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, 14 días." } },
+          { "@type": "Question", "name": "¿Puedo pagar mes a mes?", "acceptedAnswer": { "@type": "Answer", "text": "Por ahora el pago mensual no está disponible; la suscripción mínima es de 3 meses." } },
+          { "@type": "Question", "name": "¿Puedo agregar más usuarios o números?", "acceptedAnswer": { "@type": "Answer", "text": "Sí: usuario adicional desde 9,99 USD y conexión o número adicional 14,99 USD, según el plan." } },
+          { "@type": "Question", "name": "¿Qué es Chatpi?", "acceptedAnswer": { "@type": "Answer", "text": "La IA propia de Chateam, disponible como opción para responder y atender automáticamente." } },
+          { "@type": "Question", "name": "¿Ofrecen soporte en español?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, atención local en español." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <!-- ====================================================== HEADER ====== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-logo" href="#inicio" aria-label="Chateam — inicio">
+        <img src="public/images/logo-chateam.png"
+             srcset="public/images/logo-chateam.png 1x, public/images/logo-chateam@2x.png 2x"
+             width="560" height="170" alt="Chateam" />
+      </a>
+
+      <nav class="primary-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#funcionalidades">Funcionalidades</a></li>
+       
+          <li><a href="#casos-de-uso">Casos de uso</a></li>
+          <li><a href="#planes">Planes</a></li>
+        
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn--primary" href="#contacto">Prueba gratis 14 días</a>
+        <button class="nav-toggle" data-nav-toggle type="button"
+                aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menú móvil — fuera del <header> a propósito: el backdrop-filter del header
+       crea un containing block que atraparía un position:fixed. -->
+  <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+    <nav aria-label="Navegación móvil">
+      <ul>
+        <li><a class="mobile-link" href="#funcionalidades">Funcionalidades</a></li>
+      
+        
+        <li><a class="mobile-link" href="#casos-de-uso">Casos de uso</a></li>
+        <li><a class="mobile-link" href="#planes">Planes</a></li>
+       
+        <li><a class="mobile-link" href="#contacto">Contacto</a></li>
+      </ul>
+      <div class="mobile-actions">
+        <a class="btn btn--primary btn--full" href="#contacto">Prueba gratis 14 días</a>
+        <a class="btn btn--ghost btn--full" href="#contacto">Solicita una demo</a>
+      </div>
+    </nav>
+  </div>
+
+  <main id="main">
+    <!-- ==================================================== HERO ====== -->
+    <section class="hero" id="inicio">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">CRM de WhatsApp · Ecuador</span>
+          <h1>Atiende, vende y fideliza por WhatsApp <span class="accent">desde un solo lugar</span>.</h1>
+          <p class="hero-sub">
+            Chateam reúne todas tus conversaciones, automatiza tu seguimiento de ventas y te
+            ayuda a responder más rápido. Pensado para PYMES, negocios digitales y profesionales
+            en Ecuador.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn--cyan btn--lg" href="#contacto">Prueba gratis 14 días</a>
+            <a class="btn btn--ghost-light btn--lg" href="#contacto">Solicita una demo</a>
+          </div>
+          <p class="hero-trust">
+            <span class="dot" aria-hidden="true"></span> Automatiza
+            <span class="dot" aria-hidden="true"></span> Conecta
+            <span class="dot" aria-hidden="true"></span> Crece
+          </p>
+        </div>
+        <div class="hero-media">
+          <img src="public/images/imagen-hero.webp" width="694" height="719"
+               alt="Persona sosteniendo una laptop con el panel de Chateam y los canales de WhatsApp, Telegram y Messenger conectados." />
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================== LOGOS / PRUEBA SOCIAL -->
+    <section class="logos-bar" aria-label="Negocios que usan Chateam">
+      <div class="container">
+        <p>Utilizado por negocios en todo Ecuador</p>
+        <div class="logos-row">
+          <img src="public/images/logos/logo-negocio1.webp" width="263" height="101" alt="FliteFactura" loading="lazy" />
+          <img src="public/images/logos/logo-negocio2.webp" width="263" height="102" alt="Smart Track — Rastreo Satelital por GPS" loading="lazy" />
+          <img src="public/images/logos/logo-negocio3.webp" width="263" height="101" alt="Aria Lite" loading="lazy" />
+          <img src="public/images/logos/logo-negocio4.webp" width="263" height="101" alt="Importadora El Bakán" loading="lazy" />
+          <img src="public/images/logos/logo-negocio5.webp" width="263" height="101" alt="SGR — Sistema de Gestión de Residencias y Condominios" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================== PROBLEMAS ====== -->
+    <section class="section section--subtle" aria-labelledby="problemas-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">El problema</span>
+          <h2 class="text-h1" id="problemas-title">¿Tu negocio todavía responde los WhatsApp uno por uno?</h2>
+          <p>
+            Cuando los mensajes crecen, responder a tiempo se vuelve imposible. Y cada mensaje sin
+            responder es una venta que se enfría.
+          </p>
+        </div>
+
+        <div class="pain-grid">
+          <article class="pain-item reveal">
+            <span class="icon-badge"><span class="icon i-dolor-conversaciones" aria-hidden="true"></span></span>
+            <div>
+              <h3>Conversaciones dispersas</h3>
+              <p>Tus clientes te escriben por WhatsApp, Instagram y Messenger al mismo tiempo. Sin un solo panel, pierdes el hilo de cada uno.</p>
+            </div>
+          </article>
+          <article class="pain-item reveal">
+            <span class="icon-badge"><span class="icon i-dolor-seguimiento" aria-hidden="true"></span></span>
+            <div>
+              <h3>Seguimiento que se olvida</h3>
+              <p>Prometiste escribir el martes y llegó el viernes. Sin recordatorios automáticos, los leads se enfrían y se van con la competencia.</p>
+            </div>
+          </article>
+          <article class="pain-item reveal">
+            <span class="icon-badge"><span class="icon i-dolor-atencion" aria-hidden="true"></span></span>
+            <div>
+              <h3>Atención que no escala</h3>
+              <p>Mientras descansas, tus clientes preguntan. Sin respuestas automáticas, tu negocio “cierra” fuera del horario de oficina.</p>
+            </div>
+          </article>
+          <article class="pain-item reveal">
+            <span class="icon-badge"><span class="icon i-dolor-ventas" aria-hidden="true"></span></span>
+            <div>
+              <h3>Ventas sin visibilidad</h3>
+              <p>No sabes cuántos leads tienes ni en qué etapa están. Sin datos, es difícil saber qué mejorar.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================ FUNCIONALIDADES ====== -->
+    <section class="section" id="funcionalidades" aria-labelledby="func-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Funcionalidades</span>
+          <h2 class="text-h1" id="func-title">Todo lo que tu equipo necesita para vender, dentro de WhatsApp.</h2>
+          <p>
+            Chateam combina CRM, automatización y mensajería multicanal en una sola plataforma,
+            fácil de usar para equipos técnicos y no técnicos.
+          </p>
+        </div>
+
+        <div class="features-layout">
+          <div class="features-media reveal">
+            <video class="features-video" width="1120" height="1400"
+                   controls controlslist="nodownload" loop playsinline preload="metadata"
+                   poster="public/images/seccion-funcionalidades.webp"
+                   aria-label="Demostración de Chateam: de la conversación a la venta.">
+              <source src="public/videos/hf_20260630_183600_fd3f8a7f-63cc-46c7-9b29-63ad528.mp4" type="video/mp4" />
+            </video>
+            <span class="media-tag">
+              <span class="icon i-feature-mensajeria" aria-hidden="true"></span>
+              De la conversación a la venta
+            </span>
+          </div>
+
+          <div class="features-grid">
+            <article class="feature reveal">
+              <span class="icon i-feature-funnel" aria-hidden="true"></span>
+              <div>
+                <h3>Funnel de ventas visual</h3>
+                <span class="feature-tag">Visualiza tu embudo</span>
+                <p>Organiza tus oportunidades por etapas y ten claro en qué punto está cada cliente y cuál es el siguiente paso.</p>
+              </div>
+            </article>
+            <article class="feature reveal">
+              <span class="icon i-feature-asesores-ia" aria-hidden="true"></span>
+              <div>
+                <h3>Asesores con IA <span class="num">24/7</span> (Chatpi)</h3>
+                <span class="feature-tag">Nunca dejes de responder</span>
+                <p>La IA de Chateam responde preguntas frecuentes y atiende a tus clientes incluso fuera de horario, sin perder el toque humano.</p>
+              </div>
+            </article>
+            <article class="feature reveal">
+              <span class="icon i-feature-automatizacion" aria-hidden="true"></span>
+              <div>
+                <h3>Automatización de ventas y tareas</h3>
+                <span class="feature-tag">Menos trabajo manual</span>
+                <p>Crea flujos de bienvenida, recordatorios y campañas sin escribir una línea de código.</p>
+              </div>
+            </article>
+            <article class="feature reveal">
+              <span class="icon i-feature-mensajeria" aria-hidden="true"></span>
+              <div>
+                <h3>Mensajería multicanal</h3>
+                <span class="feature-tag">Un inbox para todos tus canales</span>
+                <p>Recibe y responde WhatsApp, Instagram, Messenger y Telegram desde un mismo panel.</p>
+              </div>
+            </article>
+            <article class="feature reveal">
+              <span class="icon i-feature-bots" aria-hidden="true"></span>
+              <div>
+                <h3>Bots y respuestas automáticas</h3>
+                <span class="feature-tag">Respuestas al instante</span>
+                <p>Configura bots que responden con la información correcta en el momento justo.</p>
+              </div>
+            </article>
+            <article class="feature reveal">
+              <span class="icon i-feature-informes" aria-hidden="true"></span>
+              <div>
+                <h3>Informes en tiempo real</h3>
+                <span class="feature-tag">Decide con datos</span>
+                <p>Mide el rendimiento de tu equipo, los tiempos de respuesta y tus conversiones en un panel siempre actualizado.</p>
+              </div>
+            </article>
+            <article class="feature reveal">
+              <span class="icon i-feature-equipo" aria-hidden="true"></span>
+              <div>
+                <h3>Trabajo en equipo</h3>
+                <span class="feature-tag">Varios agentes, un solo lugar</span>
+                <p>Multiusuario y multidepartamento, con transferencia de chats y chat interno entre tu equipo.</p>
+              </div>
+            </article>
+            <article class="feature reveal">
+              <span class="icon i-feature-marketing" aria-hidden="true"></span>
+              <div>
+                <h3>Integraciones de marketing</h3>
+                <span class="feature-tag">Conecta tus herramientas</span>
+                <p>Enlaza tus campañas para saber de dónde vienen tus clientes y medir cada canal.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================ CÓMO FUNCIONA ====== -->
+    <section class="section section--accent" id="como-funciona" aria-labelledby="como-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Cómo funciona</span>
+          <h2 class="text-h1" id="como-title">Empieza a vender más en tres pasos.</h2>
+        </div>
+
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-num">01</span>
+            <h3>Crea tu cuenta y prueba gratis</h3>
+            <p>Regístrate en minutos y activa tus 14 días de prueba. Conecta tu número de WhatsApp y empieza.</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-num">02</span>
+            <h3>Configura tu funnel y tus flujos</h3>
+            <p>Personaliza las etapas de tu proceso de ventas y activa los mensajes automáticos que quieres enviar. Te guiamos paso a paso.</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-num">03</span>
+            <h3>Vende, atiende y crece</h3>
+            <p>Gestiona todas tus conversaciones, automatiza el seguimiento y usa los informes para mejorar cada semana.</p>
+          </article>
+        </div>
+        <div class="steps-cta reveal">
+          <a class="btn btn--primary btn--lg" href="#contacto">Empieza tu prueba gratis</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================ INTEGRACIONES ====== -->
+    <section class="section" id="integraciones" aria-labelledby="int-title">
+      <div class="container">
+        <div class="channels">
+          <div class="reveal">
+            <span class="eyebrow">Multicanal</span>
+            <h2 class="text-h1" id="int-title">Atiende todos tus canales sin cambiar de app.</h2>
+            <p style="margin-top: var(--space-4); color: var(--color-text-secondary); font-size: var(--text-lg);">
+              Olvídate de saltar entre pestañas. WhatsApp, Instagram, Messenger y Telegram, todo en
+              un mismo lugar, y conecta tus herramientas de marketing para medir de dónde vienen tus clientes.
+            </p>
+            <p class="channels-note">
+              ¿Quieres conocer la disponibilidad de cada canal e integración para tu caso?
+              <a class="btn--link" href="#contacto">Hablemos</a>.
+            </p>
+          </div>
+
+          <div class="channels-list reveal">
+            <div class="channel-chip"><span class="icon i-feature-mensajeria" aria-hidden="true"></span> WhatsApp</div>
+            <div class="channel-chip"><span class="icon i-feature-mensajeria" aria-hidden="true"></span> Instagram</div>
+            <div class="channel-chip"><span class="icon i-feature-bots" aria-hidden="true"></span> Messenger</div>
+            <div class="channel-chip"><span class="icon i-feature-bots" aria-hidden="true"></span> Telegram</div>
+            <div class="channel-chip"><span class="icon i-feature-marketing" aria-hidden="true"></span> Marketing</div>
+            <div class="channel-chip"><span class="icon i-feature-asesores-ia" aria-hidden="true"></span> IA · Chatpi</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================ CASOS DE USO ====== -->
+    <section class="section section--subtle" id="casos-de-uso" aria-labelledby="casos-title">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">Casos de uso</span>
+          <h2 class="text-h1" id="casos-title">Chateam funciona para tu tipo de negocio.</h2>
+          <p>Desde tiendas online hasta consultorios: si vendes o atiendes por WhatsApp, Chateam es para ti.</p>
+        </div>
+
+        <div class="sectors-grid">
+          <article class="sector reveal">
+            <span class="icon-badge"><span class="icon i-comercio-retail" aria-hidden="true"></span></span>
+            <h3>Comercio y retail</h3>
+            <p>Gestiona pedidos, confirma disponibilidad y fideliza a tus clientes con mensajes automáticos de post-venta.</p>
+          </article>
+          <article class="sector reveal">
+            <span class="icon-badge"><span class="icon i-restaurante" aria-hidden="true"></span></span>
+            <h3>Restaurantes y catering</h3>
+            <p>Recibe reservas, confirma pedidos y comparte el menú del día automáticamente por WhatsApp.</p>
+          </article>
+          <article class="sector reveal">
+            <span class="icon-badge"><span class="icon i-logistica-couriers" aria-hidden="true"></span></span>
+            <h3>Logística y couriers</h3>
+            <p>Informa el estado de los envíos en tiempo real y reduce las llamadas de seguimiento.</p>
+          </article>
+          <article class="sector reveal">
+            <span class="icon-badge"><span class="icon i-inmobiliarias" aria-hidden="true"></span></span>
+            <h3>Inmobiliarias y construcción</h3>
+            <p>Califica prospectos, agenda visitas y da seguimiento a cada oportunidad sin que se te escape ninguna.</p>
+          </article>
+          <article class="sector reveal">
+            <span class="icon-badge"><span class="icon i-educacion" aria-hidden="true"></span></span>
+            <h3>Educación y capacitación</h3>
+            <p>Inscribe alumnos, envía recordatorios de clase y responde dudas frecuentes sin intervención manual.</p>
+          </article>
+          <article class="sector reveal">
+            <span class="icon-badge"><span class="icon i-salud" aria-hidden="true"></span></span>
+            <h3>Salud y bienestar</h3>
+            <p>Agenda citas, envía recordatorios y gestiona la comunicación post-consulta de forma profesional.</p>
+          </article>
+          <article class="sector reveal">
+            <span class="icon-badge"><span class="icon i-servicios-financieros" aria-hidden="true"></span></span>
+            <h3>Servicios financieros y seguros</h3>
+            <p>Califica leads, envía cotizaciones y da seguimiento a cada solicitud.</p>
+          </article>
+          <article class="sector reveal">
+            <span class="icon-badge"><span class="icon i-turismo" aria-hidden="true"></span></span>
+            <h3>Turismo y hospitalidad</h3>
+            <p>Confirma reservas, comparte itinerarios y atiende consultas a cualquier hora.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================== PLANES ====== -->
+    <section class="section" id="planes" aria-labelledby="planes-title">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">Planes</span>
+          <h2 class="text-h1" id="planes-title">Planes claros, pensados para crecer contigo.</h2>
+          <p>Empieza con 14 días gratis y elige el plan que va con tu negocio.</p>
+        </div>
+
+        <div style="display:flex; justify-content:center;">
+          <div class="plans-toggle reveal" role="tablist" aria-label="Tipo de plan">
+            <button role="tab" data-plan-tab="emprendedores" aria-selected="true" aria-controls="panel-emprendedores">Emprendedores</button>
+            <button role="tab" data-plan-tab="empresarial" aria-selected="false" aria-controls="panel-empresarial">Empresarial</button>
+          </div>
+        </div>
+
+        <!-- Panel Emprendedores -->
+        <div class="plans-panel" id="panel-emprendedores" data-plan-panel="emprendedores" role="tabpanel" aria-label="Plan Emprendedores">
+          <div class="plans-grid">
+            <article class="plan reveal">
+              <h3>Starter</h3>
+              <div class="plan-price"><span class="amount">$9.99</span><span class="period">/mes</span></div>
+              <p class="plan-meta">1 número · 1 usuario · 1 departamento</p>
+              <ul class="plan-features">
+                <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Chats y contactos limitados</li>
+                <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Panel de control</li>
+                <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Flujo de conversación básico</li>
+                <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Bot de respuestas automáticas</li>
+              </ul>
+              <a class="btn btn--ghost btn--full" href="#contacto">Empieza gratis</a>
+            </article>
+
+            <article class="plan reveal">
+              <h3>Business</h3>
+              <div class="plan-price"><span class="amount">$19.99</span><span class="period">/mes</span></div>
+              <p class="plan-meta">1 número · 1 usuario · 2 departamentos</p>
+              <ul class="plan-features">
+                <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Todo lo de Starter</li>
+                <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Flujo de campaña</li>
+                <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Agendamientos</li>
+                <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Transferencia de departamentos</li>
+              </ul>
+              <a class="btn btn--ghost btn--full" href="#contacto">Empieza gratis</a>
+            </article>
+
+            <article class="plan plan--featured reveal">
+              <h3>Business Plus</h3>
+              <div class="plan-price"><span class="amount">$29.99</span><span class="period">/mes</span></div>
+              <p class="plan-meta">1 número · 1 usuario · 3 departamentos</p>
+              <ul class="plan-features">
+                <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Chats y contactos ilimitados</li>
+                <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Flujo de conversación avanzado</li>
+                <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Funnel de ventas · campañas · informes</li>
+                <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Chat interno · Open IA (API)</li>
+              </ul>
+              <a class="btn btn--primary btn--full" href="#contacto">Empieza gratis</a>
+            </article>
+          </div>
+        </div>
+
+        <!-- Panel Empresarial -->
+        <div class="plans-panel" id="panel-empresarial" data-plan-panel="empresarial" role="tabpanel" aria-label="Plan Empresarial" hidden>
+          <div class="plans-grid">
+            <article class="plan reveal">
+              <h3>Corporate</h3>
+              <div class="plan-price"><span class="amount">$59.99</span><span class="period">/mes</span></div>
+              <p class="plan-meta">1 número · 5 usuarios · 5 departamentos</p>
+              <ul class="plan-features">
+                <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Panel de asistencia · flujo de campaña</li>
+                <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Agendamientos · transferencia</li>
+                <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Funnel de ventas · campañas limitadas</li>
+                <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Informes · chat interno · Open IA (API)</li>
+              </ul>
+              <a class="btn btn--ghost btn--full" href="#contacto">Solicita una demo</a>
+            </article>
+
+            <article class="plan plan--featured reveal">
+              <h3>Pro-Corporate</h3>
+              <div class="plan-price"><span class="amount">$79.99</span><span class="period">/mes</span></div>
+              <p class="plan-meta">2 números · 10 usuarios · 10 departamentos</p>
+              <ul class="plan-features">
+                <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Chats y contactos ilimitados</li>
+                <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Panel de asistencia · funnel de ventas</li>
+                <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Campañas ilimitadas · informes</li>
+                <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Chat interno · Open IA (API)</li>
+              </ul>
+              <a class="btn btn--primary btn--full" href="#contacto">Solicita una demo</a>
+            </article>
+
+            <article class="plan reveal">
+              <h3>Elite Corporate</h3>
+              <div class="plan-price"><span class="amount">$99.99</span><span class="period">/mes</span></div>
+              <p class="plan-meta">3 números · 15 usuarios · 15 departamentos</p>
+              <ul class="plan-features">
+                <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Chats y contactos ilimitados</li>
+                <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Flujo de conversación avanzado</li>
+                <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Funnel de ventas · campañas ilimitadas</li>
+                <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Informes · chat interno · Open IA (API)</li>
+              </ul>
+              <a class="btn btn--ghost btn--full" href="#contacto">Solicita una demo</a>
+            </article>
+          </div>
+        </div>
+
+        <div class="plans-fineprint reveal">
+          <p><strong>Pago mensual no disponible actualmente.</strong> La suscripción mínima es de 3 meses. Precios en USD.</p>
+          <p>Complementos: usuario adicional desde $9.99 · conexión o número adicional $14.99 · IA Chatpi como opción · funnel de ventas automático con IA desde $300.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================== NOSOTROS ====== -->
+    <section class="section section--accent" aria-labelledby="nosotros-title">
+      <div class="container about-band reveal">
+        <span class="eyebrow">Nosotros</span>
+        <h2 class="text-h1" id="nosotros-title">El CRM de WhatsApp para negocios ecuatorianos.</h2>
+        <p>
+          Chateam es un CRM de WhatsApp pensado para el mercado ecuatoriano: fácil de usar, con
+          precios accesibles y soporte local en español. Ayudamos a PYMES, negocios digitales y
+          profesionales a centralizar su comunicación, automatizar sus ventas y atender mejor a
+          sus clientes.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================================================== FAQ ====== -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Dudas frecuentes</span>
+          <h2 class="text-h1" id="faq-title">Preguntas frecuentes</h2>
+        </div>
+
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <button class="faq-question" data-faq-question type="button" aria-expanded="false" aria-controls="faq-1">
+              ¿Qué es Chateam? <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-1"><div><p>Un CRM integrado con WhatsApp para centralizar tu comunicación y automatizar tus ventas.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" data-faq-question type="button" aria-expanded="false" aria-controls="faq-2">
+              ¿Necesito saber programar? <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-2"><div><p>No. Puedes configurar flujos, funnel y respuestas automáticas sin escribir código.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" data-faq-question type="button" aria-expanded="false" aria-controls="faq-3">
+              ¿Con qué canales funciona? <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-3"><div><p>WhatsApp y otros canales de mensajería como Instagram, Messenger y Telegram, desde un mismo panel.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" data-faq-question type="button" aria-expanded="false" aria-controls="faq-4">
+              ¿Hay prueba gratis? <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-4"><div><p>Sí, 14 días.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" data-faq-question type="button" aria-expanded="false" aria-controls="faq-5">
+              ¿Puedo pagar mes a mes? <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-5"><div><p>Por ahora el pago mensual no está disponible; la suscripción mínima es de 3 meses.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" data-faq-question type="button" aria-expanded="false" aria-controls="faq-6">
+              ¿Puedo agregar más usuarios o números? <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-6"><div><p>Sí: usuario adicional desde $9.99 y conexión o número adicional $14.99, según el plan.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" data-faq-question type="button" aria-expanded="false" aria-controls="faq-7">
+              ¿Qué es Chatpi? <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-7"><div><p>La IA propia de Chateam, disponible como opción para responder y atender automáticamente.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" data-faq-question type="button" aria-expanded="false" aria-controls="faq-8">
+              ¿Ofrecen soporte en español? <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-8"><div><p>Sí, atención local en español.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================== CTA FINAL ====== -->
+    <section class="section section--sm" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-band reveal">
+          <h2 id="cta-title">Empieza hoy. Tus primeros <span class="num">14</span> días son gratis.</h2>
+          <p>Centraliza tu WhatsApp, automatiza tu seguimiento y atiende mejor a tus clientes.</p>
+          <div class="hero-actions">
+            <a class="btn btn--cyan btn--lg" href="#contacto">Crear mi cuenta gratis</a>
+            <a class="btn btn--ghost-light btn--lg" href="#contacto">Prefiero agendar una demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================== CONTACTO ====== -->
+    <section class="section" id="contacto" aria-labelledby="contacto-title">
+      <div class="container contact-layout">
+        <div class="contact-info reveal">
+          <span class="eyebrow">Contacto</span>
+          <h2 class="text-h1" id="contacto-title">¿Tienes preguntas? Hablemos.</h2>
+          <p style="color: var(--color-text-secondary); font-size: var(--text-lg);">
+            Déjanos tus datos y te escribimos por WhatsApp para activar tu prueba o resolver tus dudas.
+          </p>
+          <div class="contact-points">
+            <div class="contact-point">
+              <span class="icon-badge"><span class="icon i-feature-mensajeria" aria-hidden="true"></span></span>
+              <span><strong>Te respondemos por WhatsApp</strong>En horario laboral, atención en español.</span>
+            </div>
+            <div class="contact-point">
+              <span class="icon-badge"><span class="icon i-feature-informes" aria-hidden="true"></span></span>
+              <span><strong>info@chateam.ws</strong>Escríbenos cuando quieras.</span>
+            </div>
+            <div class="contact-point">
+              <span class="icon-badge"><span class="icon i-feature-asesores-ia" aria-hidden="true"></span></span>
+              <span><strong>Soporte local en Ecuador</strong>Te acompañamos en la configuración.</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="lead-form reveal" data-lead-form novalidate>
+          <div class="field">
+            <label for="nombre">Nombre completo <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Tu nombre" required />
+            <span class="error-text" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="whatsapp">Número de WhatsApp <span class="req" aria-hidden="true">*</span></label>
+            <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel" inputmode="tel" placeholder="+593 9 …" required />
+            <span class="error-text" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="email">Correo electrónico <span class="req" aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="tucorreo@empresa.com" required />
+            <span class="error-text" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="empresa">Nombre de la empresa <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="empresa" name="empresa" autocomplete="organization" placeholder="Tu negocio" required />
+            <span class="error-text" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="mensaje">¿En qué podemos ayudarte?</label>
+            <textarea id="mensaje" name="mensaje" rows="3" placeholder="Cuéntanos brevemente"></textarea>
+          </div>
+          <button class="btn btn--primary btn--full btn--lg" type="submit">Solicitar mi prueba gratis</button>
+          <p class="form-note">Al enviar, aceptas que Chateam te contacte. No compartimos tus datos con terceros.</p>
+          <div class="form-success" data-form-success role="status">
+            <span class="icon i-feature-funnel" aria-hidden="true"></span>
+            ¡Gracias! Te escribimos pronto por WhatsApp.
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================================================== FOOTER ====== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="public/images/logo-chateam.png" width="560" height="170" alt="Chateam" loading="lazy" />
+          <p>El CRM de WhatsApp para negocios ecuatorianos. Centraliza, automatiza y vende más sin perder el toque humano.</p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h4>Producto</h4>
+            <ul>
+              <li><a href="#funcionalidades">Funcionalidades</a></li>
+              <li><a href="#como-funciona">Cómo funciona</a></li>
+              <li><a href="#integraciones">Integraciones</a></li>
+              <li><a href="#planes">Planes</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Empresa</h4>
+            <ul>
+              <li><a href="#contacto">Contacto</a></li>
+              <li><a href="#faq">Preguntas frecuentes</a></li>
+              <li><a href="#planes">Precios</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="terminos.html">Términos y condiciones</a></li>
+              <li><a href="privacidad.html">Política de privacidad</a></li>
+              <li><a href="cookies.html">Política de cookies</a></li>
+              <li><a href="aviso-legal.html">Aviso legal</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Chateam. Todos los derechos reservados.</span>
+        <span>Hecho en Ecuador · Atención en español</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="src/scripts/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+/* ============================================================================
+   typography.css — Fuentes de marca + escala tipográfica
+   Depende de: tokens.css
+   Fuentes (docs/02-BRAND.md): Cocogoose Pro (titulares) + Poppins Medium (texto).
+   ⚠️ Cocogoose es versión *trial*: licencia de producción PENDIENTE.
+   ============================================================================ */
+
+/* --- @font-face: self-hosted, woff2 con fallback ttf, display swap --------- */
+@font-face {
+  font-family: "Cocogoose Pro";
+  src: url("../../public/fonts/Cocogoose-Pro-Darkmode-trial.woff2") format("woff2"),
+       url("../../public/fonts/Cocogoose-Pro-Darkmode-trial.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cocogoose Pro";
+  src: url("../../public/fonts/Cocogoose-Pro-Semilight-trial.woff2") format("woff2"),
+       url("../../public/fonts/Cocogoose-Pro-Semilight-trial.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Alias para el peso ligero usado en subtítulos display */
+@font-face {
+  font-family: "Cocogoose Pro Light";
+  src: url("../../public/fonts/Cocogoose-Pro-Semilight-trial.woff2") format("woff2"),
+       url("../../public/fonts/Cocogoose-Pro-Semilight-trial.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../../public/fonts/Poppins-Medium.woff2") format("woff2"),
+       url("../../public/fonts/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- Clases de escala (utilidades semánticas) ----------------------------- */
+.text-display {
+  font-family: var(--font-display);
+  font-weight: var(--weight-display-bold);
+  font-size: var(--text-4xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+.text-h1 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-display-bold);
+  font-size: var(--text-3xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+.text-h2 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-display-bold);
+  font-size: var(--text-2xl);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+}
+
+.text-h3 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-display-bold);
+  font-size: var(--text-xl);
+  line-height: var(--leading-snug);
+}
+
+.text-lead {
+  font-family: var(--font-body);
+  font-weight: var(--weight-body);
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+}
+
+.text-body {
+  font-family: var(--font-body);
+  font-weight: var(--weight-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+}
+
+.text-small {
+  font-family: var(--font-body);
+  font-weight: var(--weight-body);
+  font-size: var(--text-sm);
+  line-height: var(--leading-snug);
+}
+
+.text-eyebrow {
+  font-family: var(--font-body);
+  font-weight: var(--weight-body);
+  font-size: var(--text-eyebrow);
+  line-height: 1.2;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+}

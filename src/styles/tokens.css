@@ -1,0 +1,177 @@
+/* ============================================================================
+   tokens.css — Design tokens de Chateam (variables semánticas)
+   ----------------------------------------------------------------------------
+   Fuente de verdad: docs/02-BRAND.md.
+   Reglas: nombres semánticos, sin valores mágicos dispersos en componentes.
+   ============================================================================ */
+
+:root {
+  /* ==========================================================================
+     1. PALETA DE MARCA (valores crudos — usar a través de los roles de abajo)
+     ========================================================================== */
+  --brand-green: #005166;          /* verde chateam (primario) */
+  --brand-green-dark: #013D4C;     /* verde oscuro (hover) */
+  --brand-cyan: #23DADA;           /* cian (secundario / acento) */
+  --brand-cyan-soft: #D3F8F8;      /* cian claro (superficies estratégicas) */
+  --brand-white: #FFFFFF;
+  --brand-gray: #ffffff;           /* gris claro (superficies a resaltar) */
+
+  /* Degradado de marca — solo Hero y Footer (docs/02-BRAND.md) */
+  --brand-gradient: linear-gradient(100deg, #005166 0%, #23DADA 100%);
+  --brand-gradient-soft: linear-gradient(135deg, #E7FEFE 0%, #FFFFFF 70%);
+
+  /* Derivados (transparencias para detalles, no nuevos colores de marca) */
+  --brand-green-12: rgba(0, 81, 102, 0.12);
+  --brand-green-08: rgba(0, 81, 102, 0.08);
+  --brand-cyan-16: rgba(35, 218, 218, 0.16);
+
+  /* ==========================================================================
+     2. ROLES SEMÁNTICOS DE COLOR
+     ========================================================================== */
+  /* Fondos y superficies */
+  --color-bg-canvas: var(--brand-white);       /* fondo base de la página */
+  --color-bg-surface: var(--brand-white);       /* superficies neutras (toggles, etc.) */
+  --color-bg-header: #FFFFFF;                    /* blanco SOLO para el fondo de la píldora del header */
+  --color-bg-card: #f9f9f9;                      /* blanco para las cards de cada sección */
+  --color-bg-subtle: var(--brand-gray);         /* superficie a resaltar (gris) */
+  --color-bg-accent-soft: var(--brand-cyan-soft); /* superficie estratégica (cian claro) */
+  --color-bg-inverse: var(--brand-green);       /* fondo oscuro de marca */
+
+  /* Texto */
+  --color-text-primary: var(--brand-green);     /* títulos y cuerpo sobre claro */
+  --color-text-secondary: #3F6470;             /* texto de apoyo (verde desaturado) */
+  --color-text-muted: #6A8893;                  /* texto terciario / metadatos */
+  --color-text-on-dark: var(--brand-white);     /* texto sobre fondos oscuros/degradado */
+  --color-text-on-dark-muted: rgba(255, 255, 255, 0.82);
+
+  /* Marca y acciones */
+  --color-brand-primary: var(--brand-green);
+  --color-action-primary: var(--brand-green);          /* botón principal sobre claro */
+  --color-action-primary-hover: var(--brand-green-dark);
+  --color-action-on-dark: var(--brand-cyan);           /* CTA sobre fondos oscuros */
+  --color-action-on-dark-hover: #5FE6E6;
+  --color-action-text: var(--brand-white);
+  --color-action-text-on-cyan: var(--brand-green);
+
+  /* Bordes */
+  --color-border-subtle: #f3f3f3;
+  --color-border-strong: #f3f3f3;
+  --color-border-on-dark: rgb(255, 255, 255);
+
+  /* Iconos */
+  --color-icon: var(--brand-green);
+  --color-icon-accent: var(--brand-cyan);
+  --color-icon-on-dark: var(--brand-white);
+
+  /* Estados */
+  --color-success: #1FA97A;
+  --color-error: #D2483C;
+  --color-focus: var(--brand-cyan);
+
+  /* ==========================================================================
+     3. TIPOGRAFÍA
+     ========================================================================== */
+  --font-display: "Cocogoose Pro", "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display-light: "Cocogoose Pro Light", "Cocogoose Pro", "Poppins", system-ui, sans-serif;
+  --font-body: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Escala tipográfica fluida (mobile-first; clamp escala a desktop) */
+  --text-eyebrow: 0.8125rem;                                  /* 13px */
+  --text-sm: 0.875rem;                                         /* 14px */
+  --text-base: 1rem;                                           /* 16px */
+  --text-lg: 1.125rem;                                         /* 18px */
+  --text-xl: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);          /* 20→24 */
+  --text-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);              /* 24→32 */
+  --text-3xl: clamp(1.875rem, 1.5rem + 1.6vw, 2.75rem);       /* 30→44 */
+  --text-4xl: clamp(2.25rem, 1.7rem + 2.6vw, 3.75rem);        /* 36→60 */
+
+  /* Pesos disponibles según fuentes provistas */
+  --weight-body: 500;        /* Poppins Medium */
+  --weight-display: 400;     /* Cocogoose Semilight */
+  --weight-display-bold: 700;/* Cocogoose Darkmode (bold) */
+
+  /* Interlineado y tracking */
+  --leading-tight: 1.08;
+  --leading-snug: 1.25;
+  --leading-normal: 1.6;
+  --tracking-tight: -0.02em;
+  --tracking-eyebrow: 0.14em;
+
+  /* ==========================================================================
+     4. ESPACIADO (base 4px)
+     ========================================================================== */
+  --space-1: 0.25rem;   /* 4 */
+  --space-2: 0.5rem;    /* 8 */
+  --space-3: 0.75rem;   /* 12 */
+  --space-4: 1rem;      /* 16 */
+  --space-5: 1.5rem;    /* 24 */
+  --space-6: 2rem;      /* 32 */
+  --space-7: 2.5rem;    /* 40 */
+  --space-8: 3rem;      /* 48 */
+  --space-9: 4rem;      /* 64 */
+  --space-10: 5rem;     /* 80 */
+  --space-12: 7rem;     /* 112 */
+
+  /* Ritmo vertical entre secciones (fluido) */
+  --space-section: clamp(3.5rem, 2.5rem + 5vw, 7rem);
+  --space-section-sm: clamp(2.5rem, 2rem + 3vw, 4.5rem);
+
+  /* ==========================================================================
+     5. RADIOS (escala propia, distinta de la referencia)
+     ========================================================================== */
+  --radius-xs: 0.5rem;    /* 8 */
+  --radius-sm: 0.625rem;  /* 10 */
+  --radius-md: 1rem;      /* 16 */
+  --radius-lg: 1.5rem;    /* 24 */
+  --radius-xl: 2rem;      /* 32 */
+  --radius-pill: 999px;
+  --radius-card: var(--radius-lg);
+
+  /* ==========================================================================
+     6. BORDES
+     ========================================================================== */
+  --border-thin: 0.1px;
+  --border-thick: 0px;
+
+  /* ==========================================================================
+     7. SOMBRAS (teñidas de teal, uso moderado — divergencia de Refero)
+     ========================================================================== */
+  --shadow-xs: 0 1px 2px rgba(0, 81, 102, 0.06);
+  --shadow-sm: 0 4px 14px rgba(0, 81, 102, 0.08);
+  --shadow-md: 0 14px 34px rgba(0, 81, 102, 0.12);
+  --shadow-lg: 0 28px 60px rgba(0, 81, 102, 0.16);
+  --shadow-focus: 0 0 0 3px rgba(35, 218, 218, 0.5);
+
+  /* ==========================================================================
+     8. TRANSICIONES
+     ========================================================================== */
+  --duration-fast: 140ms;
+  --duration-base: 240ms;
+  --duration-slow: 420ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --transition-fast: var(--duration-fast) var(--ease-out);
+  --transition-base: var(--duration-base) var(--ease-out);
+
+  /* ==========================================================================
+     9. CONTENEDORES Y LAYOUT
+     ========================================================================== */
+  --container-max: 75rem;       /* 1200px */
+  --container-narrow: 48rem;    /* 768px (texto largo) */
+  --container-pad: clamp(1.25rem, 0.8rem + 2.2vw, 2.5rem);
+
+  /* ==========================================================================
+     10. BREAKPOINTS (referencia; se usan en media queries)
+     --bp-sm 480 · --bp-md 768 · --bp-lg 1024 · --bp-xl 1280
+     ========================================================================== */
+
+  /* ==========================================================================
+     11. Z-INDEX
+     ========================================================================== */
+  --z-base: 0;
+  --z-raised: 10;
+  --z-sticky: 100;
+  --z-header: 300;
+  --z-overlay: 400;
+  --z-modal: 500;
+}
