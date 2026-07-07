@@ -328,8 +328,8 @@ body.menu-open { overflow: hidden; }
   justify-self: center;
 }
 .hero-media img {
-  width: min(100%, 30rem);
-  filter: drop-shadow(0 24px 48px rgba(1, 40, 50, 0.45));
+  width: min(100%, 100rem);
+  filter: drop-shadow(none);
 }
 
 /* ==========================================================================
