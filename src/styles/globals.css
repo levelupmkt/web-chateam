@@ -28,6 +28,8 @@ html {
   scroll-behavior: smooth;
   /* Compensa el header flotante sticky al saltar a anclas */
   scroll-padding-top: 6rem;
+  /* Evita el scroll horizontal en móvil (junto con body) */
+  overflow-x: hidden;
 }
 
 body {

@@ -345,7 +345,7 @@ body.menu-open { overflow: hidden; }
 }
 .logos-row {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: clamp(1.5rem, 0.5rem + 4vw, 3.5rem);
