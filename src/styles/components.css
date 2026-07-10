@@ -45,6 +45,9 @@
 .i-salud                  { -webkit-mask-image: url("../../public/icons/salud.svg");                  mask-image: url("../../public/icons/salud.svg"); }
 .i-servicios-financieros  { -webkit-mask-image: url("../../public/icons/servicios-financieros.svg");  mask-image: url("../../public/icons/servicios-financieros.svg"); }
 .i-turismo                { -webkit-mask-image: url("../../public/icons/turismo.svg");                mask-image: url("../../public/icons/turismo.svg"); }
+.i-contacto-whatsapp      { -webkit-mask-image: url("../../public/icons/contacto-whatsapp.svg");      mask-image: url("../../public/icons/contacto-whatsapp.svg"); }
+.i-contacto-email         { -webkit-mask-image: url("../../public/icons/contacto-email.svg");         mask-image: url("../../public/icons/contacto-email.svg"); }
+.i-contacto-soporte       { -webkit-mask-image: url("../../public/icons/contacto-soporte.svg");       mask-image: url("../../public/icons/contacto-soporte.svg"); }
 
 /* ==========================================================================
    BOTONES
@@ -527,13 +530,15 @@ body.menu-open { overflow: hidden; }
   border-radius: var(--radius-lg);
 }
 
-.cases-media img {
+.cases-media img,
+.cases-media video {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 2 / 1;
-  object-fit: cover;
 }
+.cases-media img { aspect-ratio: 2 / 1; object-fit: cover; }
+/* El video es 16:9 (1280x720); se muestra completo, sin recorte. */
+.cases-media video { aspect-ratio: 16 / 9; }
 
 
 
