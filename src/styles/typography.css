@@ -102,5 +102,5 @@
   font-size: var(--text-eyebrow);
   line-height: 1.2;
   letter-spacing: var(--tracking-eyebrow);
-  text-transform: uppercase;
+  text-transform: lowercase;
 }

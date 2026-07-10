@@ -91,10 +91,10 @@
   --weight-display-bold: 700;/* Cocogoose Darkmode (bold) */
 
   /* Interlineado y tracking */
-  --leading-tight: 1.08;
+  --leading-tight: 1.25;
   --leading-snug: 1.25;
   --leading-normal: 1.6;
-  --tracking-tight: -0.02em;
+  --tracking-tight: 0em;
   --tracking-eyebrow: 0.14em;
 
   /* ==========================================================================

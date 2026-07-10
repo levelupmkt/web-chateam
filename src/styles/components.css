@@ -406,12 +406,12 @@ body.menu-open { overflow: hidden; }
   border-radius: var(--radius-lg);
   box-shadow: none;
 }
-/* El video ocupa el mismo contenedor que la imagen anterior (misma proporción
-   vertical 1120/1400). object-fit: cover rellena la caja recortando el sobrante
-   del video horizontal 16:9. */
+/* El video es vertical 4:5 (768x960), la misma proporción que la caja, así que
+   `cover` no llega a recortar nada; queda como salvaguarda si se cambia el
+   archivo por otro de proporción distinta. */
 .features-media video {
   display: block;
-  aspect-ratio: 1120 / 1400;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
 }
 .features-media .media-tag {
@@ -724,12 +724,36 @@ body.menu-open { overflow: hidden; }
 /* ==========================================================================
    CTA FINAL — banda degradado
    ========================================================================== */
+/* La imagen del teléfono siempre va en `position: absolute` (fuera del flujo) y
+   la banda la recorta con su `overflow: hidden` + esquinas redondeadas.
+
+   Variables de ajuste (todas viven aquí, no hay que bajar a las media queries):
+     --cta-pad            padding base de la banda.
+     --cta-media-width    ancho de la imagen (% de la banda). Se ata al ANCHO,
+                          nunca al alto: si dependiera del alto, al estrecharse
+                          la pantalla el texto ocuparía más líneas, la banda
+                          crecería y la imagen crecería con ella, invadiendo el
+                          texto justo cuando hay menos espacio.
+     --cta-media-bottom   (móvil) cuánto se entierra el teléfono por abajo.
+     --cta-media-bleed    (escritorio) cuánto se sale por la derecha. Negativo
+                          porque el .webp (809x1412) trae ~21% de margen
+                          transparente a la derecha del teléfono: sin él se
+                          recortaría ese aire y no el teléfono.
+     --cta-media-offset-y (escritorio) centro vertical de la imagen: ↑ sube, ↓ baja. */
 .cta-band {
+  --cta-pad: clamp(2.5rem, 1.5rem + 4vw, 4.5rem);
+  --cta-media-width: 78%;
+  --cta-media-bottom: -3rem;
+
   background: var(--brand-gradient);
   color: var(--color-text-on-dark);
   border-radius: var(--radius-xl);
-  padding: clamp(2.5rem, 1.5rem + 4vw, 4.5rem);
-  text-align: center;
+  padding: var(--cta-pad);
+  /* Reserva el hueco inferior donde vive el teléfono (que es absolute y por
+     tanto no empuja al texto). La altura queda en `auto`: la banda crece con
+     el texto y este padding garantiza que nunca lo tape. */
+  padding-bottom: 25rem;
+  height: auto;
   position: relative;
   overflow: hidden;
 }
@@ -741,9 +765,27 @@ body.menu-open { overflow: hidden; }
   background: radial-gradient(circle, rgba(255,255,255,0.16), transparent 60%);
   pointer-events: none;
 }
-.cta-band h2 { color: var(--color-text-on-dark); font-size: var(--text-3xl); max-width: 22ch; margin-inline: auto; }
-.cta-band p { color: var(--color-text-on-dark-muted); margin-top: var(--space-4); font-size: var(--text-lg); max-width: 46ch; margin-inline: auto; }
-.cta-band .hero-actions { justify-content: center; position: relative; z-index: var(--z-raised); }
+.cta-band-copy { position: relative; z-index: var(--z-raised); }
+.cta-band h2 { color: var(--color-text-on-dark); font-size: var(--text-3xl); max-width: 18ch; }
+.cta-band p { color: var(--color-text-on-dark-muted); margin-top: var(--space-4); font-size: var(--text-lg); max-width: 42ch; }
+.cta-band .hero-actions { position: relative; z-index: var(--z-raised); margin-top: var(--space-6); }
+/* Móvil: teléfono centrado horizontalmente y pegado al fondo de la banda, que
+   lo recorta siguiendo la curvatura de la esquina inferior.
+   El tope de 17rem cumple dos funciones: evita que en tablet (banda ancha) el
+   78% se dispare, y mantiene el alto de la imagen por debajo del hueco que
+   reserva `padding-bottom`, para que nunca alcance al texto. */
+.cta-band-media {
+  position: absolute;
+  z-index: var(--z-raised);
+  top: auto;
+  right: auto;
+  bottom: var(--cta-media-bottom);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(var(--cta-media-width), 17rem);
+  height: auto;
+  filter: drop-shadow(0 24px 48px rgba(1, 40, 50, 0.45));
+}
 
 /* ==========================================================================
    CONTACTO — formulario de captura de leads
@@ -898,6 +940,28 @@ body.menu-open { overflow: hidden; }
 }
 
 @media (min-width: 1024px) {
+  /* Escritorio: el teléfono se ancla al borde derecho, centrado verticalmente,
+     y la banda lo recorta arriba, abajo y a la derecha. Este tratamiento pide
+     espacio horizontal, por eso arranca en 1024px y no antes: entre 768 y
+     1023px se mantiene el apilado móvil. */
+  .cta-band {
+    --cta-media-width: 38%;
+    --cta-media-bleed: -8rem;
+    --cta-media-offset-y: 50%;
+
+    padding-bottom: var(--cta-pad); /* ya no hace falta el hueco inferior */
+    min-height: 28rem;
+  }
+  .cta-band-copy { max-width: 52%; }
+  .cta-band-media {
+    top: var(--cta-media-offset-y);
+    right: var(--cta-media-bleed);
+    bottom: auto;
+    left: auto;
+    transform: translateY(-50%);
+    width: var(--cta-media-width);
+  }
+
   .hero-inner { grid-template-columns: 1.05fr 0.95fr; }
   .hero h1 { font-size: clamp(2.75rem, 1.8rem + 3vw, 3.75rem); }
 
