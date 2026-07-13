@@ -326,6 +326,35 @@ body.menu-open { overflow: hidden; }
   border-radius: 50%;
   background: var(--color-action-on-dark);
 }
+/* Entrada del hero — está sobre el pliegue, así que no puede usar el
+   scroll-reveal (ya es visible al cargar). Se anima al montar, escalonando sus
+   bloques. Va bajo `.js` igual que .reveal: sin JS el contenido se ve intacto. */
+@keyframes hero-in {
+  from { opacity: 0; transform: translateY(var(--reveal-distance)); }
+  to   { opacity: 1; transform: none; }
+}
+.js .hero-copy > *,
+.js .hero-media {
+  animation: hero-in var(--reveal-duration) var(--ease-out) both;
+}
+.js .hero-copy > *:nth-child(1) { animation-delay: 40ms; }
+.js .hero-copy > *:nth-child(2) { animation-delay: 110ms; }
+.js .hero-copy > *:nth-child(3) { animation-delay: 180ms; }
+.js .hero-copy > *:nth-child(4) { animation-delay: 250ms; }
+.js .hero-copy > *:nth-child(5) { animation-delay: 320ms; }
+.js .hero-media { animation-delay: 180ms; }
+
+/* Anulación por accesibilidad. Debe vivir AQUÍ y no en globals.css: este archivo
+   se carga después y, a igual especificidad, ganaría por orden de fuente. */
+@media (prefers-reduced-motion: reduce) {
+  .js .hero-copy > *,
+  .js .hero-media {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .hero-media {
   position: relative;
   justify-self: center;
@@ -445,7 +474,7 @@ body.menu-open { overflow: hidden; }
   display: grid;
   gap: var(--space-3);
 }
-.feature .icon { --icon-size: 1.75rem; }
+.feature .icon-badge { --icon-size: 1.625rem; }
 .feature h3 { font-size: var(--text-lg); }
 .feature .feature-tag {
   font-family: var(--font-body);

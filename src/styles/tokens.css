@@ -59,10 +59,10 @@
   --color-border-on-dark: rgb(255, 255, 255);
 
   /* Iconos */
-  --color-icon: var(--brand-green);
+  --color-icon: var(--brand-white);
   --color-icon-accent: var(--brand-cyan);
   --color-icon-on-dark: var(--brand-white);
-  --color-icon-badge-bg: var(--brand-cyan);     /* fondo del contenedor (badge) de iconos */
+  --color-icon-badge-bg: var(--brand-green);     /* fondo del contenedor (badge) de iconos */
 
   /* Estados */
   --color-success: #1FA97A;
@@ -96,7 +96,7 @@
   --leading-snug: 1.25;
   --leading-normal: 1.6;
   --tracking-tight: 0em;
-  --tracking-eyebrow: 0.14em;
+  --tracking-eyebrow: 0em;
 
   /* ==========================================================================
      4. ESPACIADO (base 4px)
@@ -154,6 +154,12 @@
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --transition-fast: var(--duration-fast) var(--ease-out);
   --transition-base: var(--duration-base) var(--ease-out);
+
+  /* Entrada de contenido (scroll-reveal y hero) */
+  --reveal-distance: 18px;                 /* desplazamiento de entrada */
+  --reveal-duration: var(--duration-slow);
+  --stagger-step: 70ms;                    /* retardo entre hermanos que entran juntos */
+  --stagger-max: 6;                        /* tope de pasos: evita esperas largas */
 
   /* ==========================================================================
      9. CONTENEDORES Y LAYOUT

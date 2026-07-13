@@ -205,13 +205,29 @@ button {
    el JS añade la clase `js` al <html>, de modo que sin JS no se pierde nada. */
 .js .reveal {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity var(--duration-slow) var(--ease-out),
-              transform var(--duration-slow) var(--ease-out);
+  transform: translateY(var(--reveal-distance));
+  transition: opacity var(--reveal-duration) var(--ease-out),
+              transform var(--reveal-duration) var(--ease-out);
+  /* El JS calcula el retardo por lote: los hermanos que entran a la vez
+     cascadean en lugar de aparecer todos de golpe. */
+  transition-delay: var(--reveal-delay, 0ms);
   will-change: opacity, transform;
 }
 .js .reveal.is-visible {
   opacity: 1;
+  transform: none;
+}
+/* Al terminar la entrada se libera la capa de GPU. Sin esto, los 47 elementos
+   con `will-change` mantienen una capa viva durante toda la sesión.
+   OJO: aquí solo se toca `will-change`; poner `transition: none` mataría las
+   transiciones de hover de los componentes que comparten el mismo elemento. */
+.js .reveal.is-done {
+  will-change: auto;
+}
+
+/* Variante: solo desvanecido, sin desplazamiento. Para bloques grandes (imágenes,
+   video), donde mover 18px se siente pesado. */
+.js .reveal--fade {
   transform: none;
 }
 
@@ -231,5 +247,9 @@ button {
   .js .reveal {
     opacity: 1;
     transform: none;
+    transition-delay: 0ms !important;
   }
+  /* NOTA: la anulación de la entrada del hero vive en components.css, junto a su
+     @keyframes. Aquí no funcionaría: components.css se carga después y, a igual
+     especificidad, ganaría por orden de fuente. */
 }

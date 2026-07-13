@@ -71,20 +71,57 @@
     });
   });
 
-  /* --------------------------------------------------------- Scroll reveal */
+  /* --------------------------------------------------------- Scroll reveal
+     El escalonado se calcula POR LOTE de intersección, no por índice en el DOM:
+     los elementos que entran juntos (p. ej. una fila de tarjetas) cascadean, y
+     el siguiente lote vuelve a empezar en cero. Indexar sobre el DOM haría que
+     la última tarjeta de una rejilla larga esperase medio segundo de más.
+  -------------------------------------------------------------------------- */
   const revealEls = document.querySelectorAll(".reveal");
+
+  // Lee los tokens de movimiento para no duplicar los valores en el JS.
+  const rootStyles = getComputedStyle(document.documentElement);
+  const staggerStep =
+    parseFloat(rootStyles.getPropertyValue("--stagger-step")) || 70;
+  const staggerMax =
+    parseInt(rootStyles.getPropertyValue("--stagger-max"), 10) || 6;
+
+  function markDone(el) {
+    el.addEventListener("transitionend", function handler(e) {
+      // transitionend burbujea desde los hijos: ignorar los que no son de este
+      // elemento. Basta con escuchar una sola propiedad para no repetir.
+      if (e.target !== el || e.propertyName !== "opacity") return;
+      el.classList.add("is-done");
+      el.removeEventListener("transitionend", handler);
+    });
+  }
+
   if (prefersReducedMotion || !("IntersectionObserver" in window)) {
     revealEls.forEach(function (el) {
-      el.classList.add("is-visible");
+      el.classList.add("is-visible", "is-done");
     });
   } else {
     const observer = new IntersectionObserver(
       function (entries, obs) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            obs.unobserve(entry.target);
-          }
+        // El observer no garantiza orden de documento: ordenar para que la
+        // cascada vaya de arriba abajo y de izquierda a derecha.
+        const visible = entries
+          .filter(function (entry) {
+            return entry.isIntersecting;
+          })
+          .sort(function (a, b) {
+            const ra = a.boundingClientRect;
+            const rb = b.boundingClientRect;
+            return ra.top - rb.top || ra.left - rb.left;
+          });
+
+        visible.forEach(function (entry, i) {
+          const el = entry.target;
+          const step = Math.min(i, staggerMax);
+          el.style.setProperty("--reveal-delay", step * staggerStep + "ms");
+          markDone(el);
+          el.classList.add("is-visible");
+          obs.unobserve(el);
         });
       },
       { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
