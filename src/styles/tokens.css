@@ -62,6 +62,7 @@
   --color-icon: var(--brand-green);
   --color-icon-accent: var(--brand-cyan);
   --color-icon-on-dark: var(--brand-white);
+  --color-icon-badge-bg: var(--brand-cyan);     /* fondo del contenedor (badge) de iconos */
 
   /* Estados */
   --color-success: #1FA97A;
@@ -126,6 +127,7 @@
   --radius-xl: 2rem;      /* 32 */
   --radius-pill: 999px;
   --radius-card: var(--radius-lg);
+  --radius-icon-badge: var(--radius-pill);  /* contenedor de iconos: circular (999px) */
 
   /* ==========================================================================
      6. BORDES

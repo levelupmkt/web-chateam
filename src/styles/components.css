@@ -388,8 +388,8 @@ body.menu-open { overflow: hidden; }
   align-items: center;
   justify-content: center;
   width: 3rem; height: 3rem;
-  border-radius: var(--radius-md);
-  background: var(--color-bg-accent-soft);
+  border-radius: var(--radius-icon-badge);
+  background: var(--color-icon-badge-bg);
 }
 
 /* ==========================================================================
@@ -515,6 +515,18 @@ body.menu-open { overflow: hidden; }
   margin-top: var(--space-5);
   font-size: var(--text-sm);
   color: var(--color-text-muted);
+}
+/* Contenedor de la imagen de integraciones: panel cian de marca. Clase propia
+   (antes reutilizaba .hero-media, que pertenece al hero y se habría teñido). */
+.channels-media {
+  background-color: var(--brand-cyan-soft);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.channels-media img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* ==========================================================================
