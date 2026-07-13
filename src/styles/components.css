@@ -367,7 +367,7 @@ body.menu-open { overflow: hidden; }
 /* ==========================================================================
    BARRA DE LOGOS (prueba social)
    ========================================================================== */
-.logos-bar { padding-block: var(--space-8); border-bottom: var(--border-thin) solid var(--color-border-subtle); }
+.logos-bar { padding-block: var(--space-8); border-bottom: var( --border-thick) solid var(--color-border-subtle); }
 .logos-bar p {
   text-align: center;
   color: var(--color-text-muted);
@@ -405,7 +405,7 @@ body.menu-open { overflow: hidden; }
   align-items: start;
   padding: var(--space-5);
   background: var(--color-bg-card);
-  border: var(--border-thin) solid var(--color-border-subtle);
+  border: var( --border-thick) solid var(--color-border-subtle);
   border-radius: var(--radius-card);
 }
 .pain-item .icon-badge { --icon-size: 1.625rem; }
@@ -418,7 +418,7 @@ body.menu-open { overflow: hidden; }
   justify-content: center;
   width: 3rem; height: 3rem;
   border-radius: var(--radius-icon-badge);
-  background: var(--color-icon-badge-bg);
+  background: var( --color-icon-badge-bg);
 }
 
 /* ==========================================================================
@@ -577,7 +577,7 @@ body.menu-open { overflow: hidden; }
   width: 100%;
   height: auto;
 }
-.cases-media img { aspect-ratio: 2 / 1; object-fit: cover; }
+.cases-media img { aspect-ratio: 3 / 1; object-fit: cover; }
 /* El video es 16:9 (1280x720); se muestra completo, sin recorte. */
 .cases-media video { aspect-ratio: 16 / 9; }
 
@@ -592,13 +592,13 @@ body.menu-open { overflow: hidden; }
   display: grid;
   gap: var(--space-3);
   padding: var(--space-5);
-  background: var(--color-bg-card);
+  background: none;
   border: var(--border-thin) solid var(--color-border-subtle);
   border-radius: var(--radius-card);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
 .sector:hover {
-  border-color: var(--color-border-strong);
+  border-color: none;
   box-shadow: none;
   transform: translateY(-2px);
 }
@@ -642,7 +642,7 @@ body.menu-open { overflow: hidden; }
   flex-direction: column;
   padding: var(--space-6);
   background: var(--color-bg-card);
-  border: var(--border-thin) solid var(--color-border-subtle);
+  border: var( --border-thick) solid var(--color-border-subtle);
   border-radius: var(--radius-lg);
 }
 .plan--featured {

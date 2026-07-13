@@ -14,7 +14,8 @@
   --brand-cyan: #23DADA;           /* cian (secundario / acento) */
   --brand-cyan-soft: #ecfcfc;      /* cian claro (superficies estratégicas) */
   --brand-white: #FFFFFF;
-  --brand-gray: #ffffff;           /* gris claro (superficies a resaltar) */
+  --brand-gray: #efefef;           /* gris claro (superficies a resaltar) */
+  --brand-gray-70: #6c6c6c; 
 
   /* Degradado de marca — solo Hero y Footer (docs/02-BRAND.md) */
   --brand-gradient: linear-gradient(100deg, #005166 0%, #23DADA 100%);
@@ -42,7 +43,7 @@
   --color-text-secondary: #3F6470;             /* texto de apoyo (verde desaturado) */
   --color-text-muted: #6A8893;                  /* texto terciario / metadatos */
   --color-text-on-dark: var(--brand-white);     /* texto sobre fondos oscuros/degradado */
-  --color-text-on-dark-muted: rgba(255, 255, 255, 0.82);
+  --color-text-on-dark-muted: #ffffff;
 
   /* Marca y acciones */
   --color-brand-primary: var(--brand-green);
@@ -54,7 +55,7 @@
   --color-action-text-on-cyan: var(--brand-green);
 
   /* Bordes */
-  --color-border-subtle: #f3f3f3;
+  --color-border-subtle: #005166;
   --color-border-strong: #f3f3f3;
   --color-border-on-dark: rgb(255, 255, 255);
 
@@ -63,6 +64,7 @@
   --color-icon-accent: var(--brand-cyan);
   --color-icon-on-dark: var(--brand-white);
   --color-icon-badge-bg: var(--brand-green);     /* fondo del contenedor (badge) de iconos */
+  --color-icon-badge-bg-problemas: var(--brand-gray-70); 
 
   /* Estados */
   --color-success: #1FA97A;
@@ -132,7 +134,7 @@
   /* ==========================================================================
      6. BORDES
      ========================================================================== */
-  --border-thin: 0.1px;
+  --border-thin: 1.5px;
   --border-thick: 0px;
 
   /* ==========================================================================
