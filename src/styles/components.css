@@ -788,8 +788,8 @@ body.menu-open { overflow: hidden; }
      --cta-media-offset-y (escritorio) centro vertical de la imagen: ↑ sube, ↓ baja. */
 .cta-band {
   --cta-pad: clamp(2.5rem, 1.5rem + 4vw, 4.5rem);
-  --cta-media-width: 78%;
-  --cta-media-bottom: -3rem;
+  --cta-media-width: 100%;
+  --cta-media-bottom: -4rem;
 
   background: var(--brand-gradient);
   color: var(--color-text-on-dark);
@@ -992,8 +992,8 @@ body.menu-open { overflow: hidden; }
      1023px se mantiene el apilado móvil. */
   .cta-band {
     --cta-media-width: 38%;
-    --cta-media-bleed: -8rem;
-    --cta-media-offset-y: 50%;
+    --cta-media-bleed: 2rem;
+    --cta-media-offset-y: 63%;
 
     padding-bottom: var(--cta-pad); /* ya no hace falta el hueco inferior */
     min-height: 28rem;
