@@ -14,7 +14,7 @@
   --brand-cyan: #23DADA;           /* cian (secundario / acento) */
   --brand-cyan-soft: #ecfcfc;      /* cian claro (superficies estratégicas) */
   --brand-white: #FFFFFF;
-  --brand-gray: #efefef;           /* gris claro (superficies a resaltar) */
+  --brand-gray: #ffffff;           /* gris claro (superficies a resaltar) */
   --brand-gray-70: #6c6c6c; 
 
   /* Degradado de marca — solo Hero y Footer (docs/02-BRAND.md) */
@@ -55,7 +55,7 @@
   --color-action-text-on-cyan: var(--brand-green);
 
   /* Bordes */
-  --color-border-subtle: #005166;
+  --color-border-subtle: #bebebe;
   --color-border-strong: #f3f3f3;
   --color-border-on-dark: rgb(255, 255, 255);
 
@@ -64,7 +64,7 @@
   --color-icon-accent: var(--brand-cyan);
   --color-icon-on-dark: var(--brand-white);
   --color-icon-badge-bg: var(--brand-green);     /* fondo del contenedor (badge) de iconos */
-  --color-icon-badge-bg-problemas: var(--brand-gray-70); 
+  --color-icon-badge-bg-problemas: var(--brand-gray-70); /* badge de la sección Problemas (gris) */
 
   /* Estados */
   --color-success: #1FA97A;
@@ -134,8 +134,8 @@
   /* ==========================================================================
      6. BORDES
      ========================================================================== */
-  --border-thin: 1.5px;
-  --border-thick: 0px;
+  --border-thin: 0.5px;
+  --border-thick: 0.5px;
 
   /* ==========================================================================
      7. SOMBRAS (teñidas de teal, uso moderado — divergencia de Refero)

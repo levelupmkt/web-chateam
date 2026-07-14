@@ -367,7 +367,7 @@ body.menu-open { overflow: hidden; }
 /* ==========================================================================
    BARRA DE LOGOS (prueba social)
    ========================================================================== */
-.logos-bar { padding-block: var(--space-8); border-bottom: var( --border-thick) solid var(--color-border-subtle); }
+.logos-bar { padding-block: var(--space-8); border-bottom: var( --border-thick) /*solid var(--color-border-subtle) */; }
 .logos-bar p {
   text-align: center;
   color: var(--color-text-muted);
@@ -405,10 +405,15 @@ body.menu-open { overflow: hidden; }
   align-items: start;
   padding: var(--space-5);
   background: var(--color-bg-card);
-  border: var( --border-thick) solid var(--color-border-subtle);
+  border: none; /* var(--border-thick) solid var(--color-border-subtle); */
   border-radius: var(--radius-card);
 }
-.pain-item .icon-badge { --icon-size: 1.625rem; }
+/* La sección Problemas usa un badge gris en vez del verde de marca: son dolores,
+   no funcionalidades, y el gris los baja de jerarquía. */
+.pain-item .icon-badge {
+  --icon-size: 1.625rem;
+  background: var(--color-icon-badge-bg-problemas);
+}
 .pain-item h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
 .pain-item p { color: var(--color-text-secondary); font-size: var(--text-sm); }
 
