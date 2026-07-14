@@ -48,6 +48,8 @@
 .i-contacto-whatsapp      { -webkit-mask-image: url("../../public/icons/contacto-whatsapp.svg");      mask-image: url("../../public/icons/contacto-whatsapp.svg"); }
 .i-contacto-email         { -webkit-mask-image: url("../../public/icons/contacto-email.svg");         mask-image: url("../../public/icons/contacto-email.svg"); }
 .i-contacto-soporte       { -webkit-mask-image: url("../../public/icons/contacto-soporte.svg");       mask-image: url("../../public/icons/contacto-soporte.svg"); }
+.i-calendario    { -webkit-mask-image: url("../../public/icons/calendario.svg");    mask-image: url("../../public/icons/calendario.svg"); }
+.i-bot    { -webkit-mask-image: url("../../public/icons/bot.svg");    mask-image: url("../../public/icons/bot.svg"); }
 
 /* ==========================================================================
    BOTONES
@@ -70,6 +72,9 @@
               transform var(--transition-fast),
               box-shadow var(--transition-fast);
   white-space: nowrap;
+}
+.btn .icon {
+  --icon-color: currentColor;
 }
 .btn:active { transform: translateY(1px); }
 
@@ -412,6 +417,7 @@ body.menu-open { overflow: hidden; }
    no funcionalidades, y el gris los baja de jerarquía. */
 .pain-item .icon-badge {
   --icon-size: 1.625rem;
+   --icon-color: var(--color-icon-on-dark);
   background: var(--color-icon-badge-bg-problemas);
 }
 .pain-item h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
@@ -598,7 +604,7 @@ body.menu-open { overflow: hidden; }
   gap: var(--space-3);
   padding: var(--space-5);
   background: none;
-  border: var(--border-thin) solid var(--color-border-subtle);
+  border: var(--border-casos) solid var(--color-border-casos);
   border-radius: var(--radius-card);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
 }
