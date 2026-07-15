@@ -50,6 +50,7 @@
 .i-contacto-soporte       { -webkit-mask-image: url("../../public/icons/contacto-soporte.svg");       mask-image: url("../../public/icons/contacto-soporte.svg"); }
 .i-calendario    { -webkit-mask-image: url("../../public/icons/calendario.svg");    mask-image: url("../../public/icons/calendario.svg"); }
 .i-bot    { -webkit-mask-image: url("../../public/icons/bot.svg");    mask-image: url("../../public/icons/bot.svg"); }
+.i-arrow-right   { -webkit-mask-image: url("../../public/icons/arrow-right.svg");    mask-image: url("../../public/icons/arrow-right.svg"); }
 
 /* ==========================================================================
    BOTONES
@@ -58,8 +59,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-2);
-  padding: 0.875rem 1.5rem;
+  gap: var(--space-3);
+  padding: 0.5rem 0.5rem;
   font-family: var(--font-body);
   font-weight: var(--weight-body);
   font-size: var(--text-base);
@@ -76,11 +77,29 @@
 .btn .icon {
   --icon-color: currentColor;
 }
+
+/* Contenedor circular para iconos de botones principales */
+.btn--primary .btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+  background-color: var(--brand-white);
+  border-radius: 999px;
+}
+
+/* Color del icono dentro del círculo */
+.btn--primary .btn-icon .icon {
+  --icon-size: 1.25rem;
+  --icon-color: var(--brand-green);
+}
 .btn:active { transform: translateY(1px); }
 
 /* Primario: verde de marca sobre fondos claros */
 .btn--primary {
-  background-color: var(--color-action-primary);
+  background: var(--color-action-primary);
   color: var(--color-action-text);
   box-shadow: none;
 }
@@ -121,7 +140,7 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.btn--lg { padding: 1.0625rem 2rem; font-size: var(--text-lg); }
+.btn--lg { padding: 1.0625rem 1.4rem; font-size: var(--text-lg); }
 .btn--full { width: 100%; }
 .btn--link {
   background: none;
@@ -480,6 +499,12 @@ body.menu-open { overflow: hidden; }
 .features-grid {
   display: grid;
   gap: var(--space-6) var(--space-5);
+}
+/* El botón es un hijo de la rejilla: los ítems de grid se estiran por defecto
+   (justify-self: stretch), lo que lo hacía tan ancho como su celda. `start` lo
+   deja ajustarse a su contenido, conservando el padding del botón. */
+.features-grid > .btn {
+  justify-self: start;
 }
 .feature {
   display: grid;
