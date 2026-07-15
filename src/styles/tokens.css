@@ -176,6 +176,9 @@
   --container-max: 75rem;       /* 1200px */
   --container-narrow: 48rem;    /* 768px (texto largo) */
   --container-pad: clamp(1.25rem, 0.8rem + 2.2vw, 2.5rem);
+  /* Relaciones de aspecto responsive */
+--aspect-problem-media: 1 / 1;
+--aspect-cases-video: 1 / 1;
 
   /* ==========================================================================
      10. BREAKPOINTS (referencia; se usan en media queries)
@@ -192,3 +195,5 @@
   --z-overlay: 400;
   --z-modal: 500;
 }
+
+

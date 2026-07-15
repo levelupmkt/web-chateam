@@ -582,15 +582,25 @@ body.menu-open { overflow: hidden; }
   border-radius: var(--radius-lg);
 }
 
+/* Imagen de la sección El problema */
+.cases-media--problem {
+  aspect-ratio: var(--aspect-problem-media);
+}
+
+/* Video de la sección Casos de uso */
+.cases-media--video {
+  aspect-ratio: var(--aspect-cases-video);
+}
+
+/* El contenido ocupa completamente el contenedor */
 .cases-media img,
 .cases-media video {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
-.cases-media img { aspect-ratio: 3 / 1; object-fit: cover; }
-/* El video es 16:9 (1280x720); se muestra completo, sin recorte. */
-.cases-media video { aspect-ratio: 16 / 9; }
 
 
 
@@ -982,12 +992,21 @@ body.menu-open { overflow: hidden; }
    RESPONSIVE — escalado mobile-first
    ========================================================================== */
 @media (min-width: 600px) {
+  :root {
+  --aspect-problem-media: 4 / 3;
+  --aspect-cases-video: 4 / 3;
+}
+   
   .pain-grid { grid-template-columns: repeat(2, 1fr); }
   .sectors-grid { grid-template-columns: repeat(2, 1fr); }
   .plans-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (min-width: 768px) {
+  :root {
+  --aspect-problem-media: 2 / 1;
+  --aspect-cases-video: 3 / 2;
+}
   .features-grid { grid-template-columns: repeat(2, 1fr); }
   .channels { grid-template-columns: 1fr 1fr; }
   .contact-layout { grid-template-columns: 0.9fr 1.1fr; }
@@ -997,6 +1016,11 @@ body.menu-open { overflow: hidden; }
 }
 
 @media (min-width: 1024px) {
+  :root {
+  --aspect-problem-media: 3 / 1;
+  --aspect-cases-video: 16 / 9;
+}
+  
   /* Escritorio: el teléfono se ancla al borde derecho, centrado verticalmente,
      y la banda lo recorta arriba, abajo y a la derecha. Este tratamiento pide
      espacio horizontal, por eso arranca en 1024px y no antes: entre 768 y
@@ -1033,5 +1057,5 @@ body.menu-open { overflow: hidden; }
 @media (min-width: 1200px) {
   .primary-nav { display: block; }
   .nav-toggle { display: none; }
-  .pain-grid { grid-template-columns: repeat(4, 1fr); }
+  
 }
