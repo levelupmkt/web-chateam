@@ -99,7 +99,7 @@
 
 /* Primario: verde de marca sobre fondos claros */
 .btn--primary {
-  background: var(--color-action-primary);
+  background-color: var(--color-action-primary);
   color: var(--color-action-text);
   box-shadow: none;
 }
@@ -384,7 +384,7 @@ body.menu-open { overflow: hidden; }
   justify-self: center;
 }
 .hero-media img {
-  width: min(100%, 100rem);
+  width: min(94%, 94rem);
   filter: drop-shadow(none);
 }
 
